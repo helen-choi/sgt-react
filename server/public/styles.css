@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-wrap:wrap;
+  width: 100%;
+  max-width: 1250px;
+  height: 100vh;
+}
+.list{
+  flex-basis: 100%;
+}
