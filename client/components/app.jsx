@@ -19,8 +19,9 @@ class App extends React.Component {
       .then(res => res.json())
       .then(grades => {
         this.setState({ grades: grades });
-      })
-      .catch(err => console.error('Uh oh, fetch failed!', err));
+        // this.getAverageGrade();
+      });
+    // .catch(err => console.error('Uh oh, fetch failed!', err));
   }
 
   render() {
