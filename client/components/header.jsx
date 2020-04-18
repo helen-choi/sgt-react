@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function PapeTitle(props) {
+export default function Header(props) {
   return (
     <h1>{props.text}</h1>
   );
