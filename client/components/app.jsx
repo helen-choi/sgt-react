@@ -19,9 +19,8 @@ class App extends React.Component {
       .then(res => res.json())
       .then(grades => {
         this.setState({ grades: grades });
-        // console.log('success!!', grades);
-      });
-    // .catch(err => console.error('Uh oh, fetch failed!', err));
+      })
+      .catch(err => console.error('Uh oh, fetch failed!', err));
   }
 
   render() {

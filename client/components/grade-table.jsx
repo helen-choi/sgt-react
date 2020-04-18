@@ -1,17 +1,16 @@
 import React from 'react';
 
-// function Grade(props) {
-//   return (
-//     <tr>
-//       <td>{props.grade}</td>
-//       <td>{props.grade}</td>
-//       <td>{props.grade}</td>
-//     </tr>
-//   );
-// }
+function Grade(props) {
+  return (
+    <tr>
+      <td>{props.grade.name}</td>
+      <td>{props.grade.course}</td>
+      <td>{props.grade.grade}</td>
+    </tr>
+  );
+}
 
 export default function GradeTable(props) {
-  // console.log(props.grades);
   return (
     <table className="table table-striped">
       <thead>
@@ -22,11 +21,13 @@ export default function GradeTable(props) {
         </tr>
       </thead>
       <tbody>
-        {/* {props.grades.map(grade => {
+        {props.grades.map(grade => {
           return (
-            <Grade key={grade.id} grade={grade}/>
+            <Grade
+              key={grade.id}
+              grade={grade}/>
           );
-        })} */}
+        })}
       </tbody>
     </table>
   );
