@@ -6,8 +6,22 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      grades: [1, 2, 3]
+      grades: []
     };
+  }
+
+  componentDidMount() {
+    this.getGrades();
+  }
+
+  getGrades() {
+    fetch('/api/grades')
+      .then(res => res.json())
+      .then(grades => {
+        this.setState({ grades: grades });
+        // console.log('success!!', grades);
+      });
+    // .catch(err => console.error('Uh oh, fetch failed!', err));
   }
 
   render() {
