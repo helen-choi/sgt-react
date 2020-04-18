@@ -8,6 +8,7 @@ class App extends React.Component {
     this.state = {
       grades: []
     };
+    this.getAverageGrade = this.getAverageGrade.bind(this);
   }
 
   componentDidMount() {
@@ -19,25 +20,25 @@ class App extends React.Component {
       .then(res => res.json())
       .then(grades => {
         this.setState({ grades: grades });
-        this.getAverageGrade();
-      });
-    // .catch(err => console.error('Uh oh, fetch failed!', err));
+      })
+      .catch(err => console.error('Uh oh, fetch failed!', err));
   }
 
-  getAverageGrade() {
-    const grades = this.state.grades;
+  getAverageGrade(grades) {
     let sum = 0;
     for (let i = 0; i < grades.length; i++) {
       sum += grades[i].grade;
     }
-    return sum / grades.length;
+    const average = sum / grades.length;
+    return Math.ceil(average);
   }
 
   render() {
+    const grades = this.state.grades;
     return (
       <div className="container">
         <div className="list">
-          <Header text="Student Grade Table" />
+          <Header text="Student Grade Table" average={this.getAverageGrade(grades)}/>
           <GradeTable grades={this.state.grades}/>
         </div>
       </div>
