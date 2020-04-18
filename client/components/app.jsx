@@ -19,9 +19,18 @@ class App extends React.Component {
       .then(res => res.json())
       .then(grades => {
         this.setState({ grades: grades });
-        // this.getAverageGrade();
+        this.getAverageGrade();
       });
     // .catch(err => console.error('Uh oh, fetch failed!', err));
+  }
+
+  getAverageGrade() {
+    const grades = this.state.grades;
+    let sum = 0;
+    for (let i = 0; i < grades.length; i++) {
+      sum += grades[i].grade;
+    }
+    return sum / grades.length;
   }
 
   render() {
