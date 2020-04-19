@@ -26,9 +26,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <div className="list">
-          <Header text="Student Grade Table" />
-          <GradeTable grades={this.state.grades}/>
+        <div className="row">
+          <div className="list col-md-8">
+            <Header text="Student Grade Table" />
+            <GradeTable grades={this.state.grades} />
+          </div>
+          <div className="form col-md-4">
+
+          </div>
         </div>
       </div>
     );
