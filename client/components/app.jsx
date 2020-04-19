@@ -14,6 +14,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getGrades();
+    this.addGrade();
   }
 
   getGrades() {
