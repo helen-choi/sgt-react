@@ -23,7 +23,12 @@ export default class GradeForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    // console.log(this.state);
+    const newGrade = {
+      name: this.state.name,
+      course: this.state.course,
+      grade: this.state.grade
+    };
+    this.props.onSubmit(newGrade);
   }
 
   handleCancelClick() {

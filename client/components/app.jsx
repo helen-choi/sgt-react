@@ -41,7 +41,7 @@ class App extends React.Component {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify()
+      body: JSON.stringify(newGrade)
     })
       .then(res => res.json());
     // .then(data => console.log('successfully fetching', data));
