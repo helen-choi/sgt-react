@@ -36,6 +36,7 @@ class App extends React.Component {
   }
 
   addGrade(newGrade) {
+    const grades = this.state.grades.concat();
     fetch('/api/grades', {
       method: 'POST',
       headers: {
@@ -43,8 +44,11 @@ class App extends React.Component {
       },
       body: JSON.stringify(newGrade)
     })
-      .then(res => res.json());
-    // .then(data => console.log('successfully fetching', data));
+      .then(res => res.json())
+      .then(grade => {
+        grades.push(grade);
+        this.setState({ grades: grades });
+      });
   }
 
   render() {
