@@ -10,11 +10,11 @@ class App extends React.Component {
       grades: []
     };
     this.getAverageGrade = this.getAverageGrade.bind(this);
+    this.addGrade = this.addGrade.bind(this);
   }
 
   componentDidMount() {
     this.getGrades();
-    this.addGrade();
   }
 
   getGrades() {
@@ -35,7 +35,7 @@ class App extends React.Component {
     return Math.ceil(average);
   }
 
-  addGrade() {
+  addGrade(newGrade) {
     fetch('/api/grades', {
       method: 'POST',
       headers: {
@@ -56,7 +56,7 @@ class App extends React.Component {
           <GradeTable grades={this.state.grades}/>
         </div>
         <div className="form">
-          <GradeForm />
+          <GradeForm onSubmit={this.addGrade}/>
         </div>
       </div>
     );

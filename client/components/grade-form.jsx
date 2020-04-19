@@ -10,10 +10,20 @@ export default class GradeForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCancelClick = this.handleCancelClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    const name = event.target.name;
+    const value = event.target.value;
+    this.setState({
+      [name]: value
+    });
   }
 
   handleSubmit(event) {
     event.preventDefault();
+    // console.log(this.state);
   }
 
   handleCancelClick() {
@@ -27,9 +37,9 @@ export default class GradeForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="name" id="name" name="name" value={this.state.name} placeholder="Name" />
-        <input type="course" id="course" name="course" value={this.state.course} placeholder="Course" />
-        <input type="grade" id="grade" name="grade" value={this.state.grade} placeholder="Grade" />
+        <input type="name" id="name" name="name" value={this.state.name} onChange={this.handleChange} placeholder="Name" />
+        <input type="course" id="course" name="course" value={this.state.course} onChange={this.handleChange} placeholder="Course" />
+        <input type="grade" id="grade" name="grade" value={this.state.grade} onChange={this.handleChange} placeholder="Grade" />
         <button type="submit">Add</button>
         <button onClick="">Cancel</button>
       </form>
