@@ -11,6 +11,7 @@ class App extends React.Component {
     };
     this.getAverageGrade = this.getAverageGrade.bind(this);
     this.addGrade = this.addGrade.bind(this);
+    this.deleteGrade = this.deleteGrade.bind(this);
   }
 
   componentDidMount() {
@@ -22,8 +23,19 @@ class App extends React.Component {
       .then(res => res.json())
       .then(grades => {
         this.setState({ grades: grades });
+        this.deleteGrade();
       })
       .catch(err => console.error('Uh oh, fetch failed!', err));
+  }
+
+  deleteGrade() {
+    const grades = this.state.grades.concat();
+    fetch('/api/grades/5', { method: 'DELETE' })
+      .then(res => {
+        const targetIndex = grades.findIndex(el => el.id === 5);
+        grades.splice(targetIndex, 1);
+        this.setState({ grades: grades });
+      });
   }
 
   getAverageGrade(grades) {
