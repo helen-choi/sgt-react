@@ -1,22 +1,22 @@
 {
   "grades": [
     {
-      "id": 12,
-      "name": "Brendan Eich",
-      "course": "JavaScript",
-      "grade": 100
-    },
-    {
-      "id": 32,
-      "name": "Douglas Crockford",
-      "course": "JavaScript",
-      "grade": 100
+      "name": "Helen Choi",
+      "course": "Web Dev",
+      "grade": "90",
+      "id": 1
     },
     {
       "name": "Jae Choi",
       "course": "Design",
-      "grade": "30",
-      "id": 34
+      "grade": "100",
+      "id": 2
+    },
+    {
+      "name": "Logan Choi",
+      "course": "Sleeping",
+      "grade": "50",
+      "id": 3
     }
   ]
 }

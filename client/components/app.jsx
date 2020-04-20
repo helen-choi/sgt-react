@@ -28,14 +28,13 @@ class App extends React.Component {
   }
 
   deleteGrade(gradeId) {
-    // const grades = this.state.grades.concat();
-    // const targetId = grades.findIndex(el => el.id === targetId);
-    // fetch(`/api/grades/${targetId}`, { method: 'DELETE' })
-    //   .then(res => {
-    //     grades.splice(targetIndex, 1);
-    //     this.setState({ grades: grades });
-    //     console.log('Fetch successful!');
-    //   });
+    const grades = this.state.grades.concat();
+    const targetIndex = grades.findIndex(el => el.id === gradeId);
+    fetch(`/api/grades/${gradeId}`, { method: 'DELETE' })
+      .then(res => {
+        grades.splice(targetIndex, 1);
+        this.setState({ grades: grades });
+      });
 
   }
 
