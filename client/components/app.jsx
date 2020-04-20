@@ -27,7 +27,7 @@ class App extends React.Component {
       .catch(err => console.error('Uh oh, fetch failed!', err));
   }
 
-  deleteGrade() {
+  deleteGrade(gradeId) {
     // const grades = this.state.grades.concat();
     // const targetId = grades.findIndex(el => el.id === targetId);
     // fetch(`/api/grades/${targetId}`, { method: 'DELETE' })
@@ -36,6 +36,7 @@ class App extends React.Component {
     //     this.setState({ grades: grades });
     //     console.log('Fetch successful!');
     //   });
+
   }
 
   getAverageGrade(grades) {
