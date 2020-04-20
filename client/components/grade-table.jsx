@@ -3,10 +3,10 @@ import React from 'react';
 function Grade(props) {
   return (
     <tr>
-      <td>{props.grade.name}</td>
-      <td>{props.grade.course}</td>
-      <td>{props.grade.grade}</td>
-      <td><button className="btn-delete" onClick={() => {
+      <td className="align-middle">{props.grade.name}</td>
+      <td className="align-middle">{props.grade.course}</td>
+      <td className="align-middle">{props.grade.grade}</td>
+      <td className="align-middle"><button className="btn-delete" onClick={() => {
         props.deleteGrade(props.grade.id);
       }}>Delete</button></td>
     </tr>
