@@ -8,6 +8,7 @@ class App extends React.Component {
     this.state = {
       grades: []
     };
+    this.getAverageGrade = this.getAverageGrade.bind(this);
   }
 
   componentDidMount() {
@@ -23,9 +24,20 @@ class App extends React.Component {
       .catch(err => console.error('Uh oh, fetch failed!', err));
   }
 
+  getAverageGrade(grades) {
+    let sum = 0;
+    for (let i = 0; i < grades.length; i++) {
+      sum += grades[i].grade;
+    }
+    const average = sum / grades.length;
+    return Math.ceil(average);
+  }
+
   render() {
+    const grades = this.state.grades;
     return (
       <div className="container">
+
         <div className="row">
           <div className="list col-md-8">
             <Header text="Student Grade Table" />
