@@ -6,7 +6,9 @@ function Grade(props) {
       <td>{props.grade.name}</td>
       <td>{props.grade.course}</td>
       <td>{props.grade.grade}</td>
-      <td><button>Delete</button></td>
+      <td><button onClick={() => {
+        props.deleteGrade();
+      }}>Delete</button></td>
     </tr>
   );
 }
@@ -27,7 +29,8 @@ export default function GradeTable(props) {
           return (
             <Grade
               key={grade.id}
-              grade={grade}/>
+              grade={grade}
+              deleteGrade={props.deleteGrade} />
           );
         })}
       </tbody>

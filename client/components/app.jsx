@@ -23,19 +23,19 @@ class App extends React.Component {
       .then(res => res.json())
       .then(grades => {
         this.setState({ grades: grades });
-        this.deleteGrade();
       })
       .catch(err => console.error('Uh oh, fetch failed!', err));
   }
 
   deleteGrade() {
-    const grades = this.state.grades.concat();
-    fetch('/api/grades/5', { method: 'DELETE' })
-      .then(res => {
-        const targetIndex = grades.findIndex(el => el.id === 5);
-        grades.splice(targetIndex, 1);
-        this.setState({ grades: grades });
-      });
+    // const grades = this.state.grades.concat();
+    // const targetId = grades.findIndex(el => el.id === targetId);
+    // fetch(`/api/grades/${targetId}`, { method: 'DELETE' })
+    //   .then(res => {
+    //     grades.splice(targetIndex, 1);
+    //     this.setState({ grades: grades });
+    //     console.log('Fetch successful!');
+    //   });
   }
 
   getAverageGrade(grades) {
@@ -69,7 +69,7 @@ class App extends React.Component {
       <div className="container">
         <div className="list">
           <Header text="Student Grade Table" average={this.getAverageGrade(grades)}/>
-          <GradeTable grades={this.state.grades}/>
+          <GradeTable grades={this.state.grades} deleteGrade={this.deleteGrade}/>
         </div>
         <div className="form">
           <GradeForm onSubmit={this.addGrade}/>
