@@ -67,12 +67,16 @@ class App extends React.Component {
     const grades = this.state.grades;
     return (
       <div className="container">
-        <div className="list">
-          <Header text="Student Grade Table" average={this.getAverageGrade(grades)}/>
-          <GradeTable grades={this.state.grades} deleteGrade={this.deleteGrade}/>
-        </div>
-        <div className="form">
-          <GradeForm onSubmit={this.addGrade}/>
+        <div className="row d-flex">
+
+          <Header text="Student Grade Table" average={this.getAverageGrade(grades)} />
+
+          <div className="form col-sm-4 order-sm-2">
+            <GradeForm onSubmit={this.addGrade} />
+          </div>
+          <div className="list col-sm-8 order-sm-1">
+            <GradeTable grades={this.state.grades} deleteGrade={this.deleteGrade} />
+          </div>
         </div>
       </div>
     );
