@@ -71,10 +71,10 @@ class App extends React.Component {
 
           <Header text="Student Grade Table" average={this.getAverageGrade(grades)} />
 
-          <div className="form col-sm-4 order-sm-2">
+          <div className="form col-md-4 order-md-2">
             <GradeForm onSubmit={this.addGrade} />
           </div>
-          <div className="list col-sm-8 order-sm-1">
+          <div className="list col-md-8 order-md-1">
             <GradeTable grades={this.state.grades} deleteGrade={this.deleteGrade} />
           </div>
         </div>
