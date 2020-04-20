@@ -11,6 +11,7 @@ class App extends React.Component {
     };
     this.getAverageGrade = this.getAverageGrade.bind(this);
     this.addGrade = this.addGrade.bind(this);
+    this.deleteGrade = this.deleteGrade.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +25,17 @@ class App extends React.Component {
         this.setState({ grades: grades });
       })
       .catch(err => console.error('Uh oh, fetch failed!', err));
+  }
+
+  deleteGrade(gradeId) {
+    const grades = this.state.grades.concat();
+    const targetIndex = grades.findIndex(el => el.id === gradeId);
+    fetch(`/api/grades/${gradeId}`, { method: 'DELETE' })
+      .then(res => {
+        grades.splice(targetIndex, 1);
+        this.setState({ grades: grades });
+      });
+
   }
 
   getAverageGrade(grades) {
@@ -55,15 +67,10 @@ class App extends React.Component {
     const grades = this.state.grades;
     return (
       <div className="container">
+        <div className="list">
+          <Header text="Student Grade Table" average={this.getAverageGrade(grades)}/>
+          <GradeTable grades={this.state.grades} deleteGrade={this.deleteGrade}/>
 
-        <div className="row">
-          <div className="list col-md-8">
-            <Header text="Student Grade Table" />
-            <GradeTable grades={this.state.grades} />
-          </div>
-          <div className="form col-md-4">
-
-          </div>
         </div>
         <div className="form">
           <GradeForm onSubmit={this.addGrade}/>

@@ -1,40 +1,22 @@
 {
   "grades": [
     {
-      "id": 5,
-      "name": "Kyle Simpson",
-      "course": "JavaScript",
-      "grade": 100
-    },
-    {
-      "id": 12,
-      "name": "Brendan Eich",
-      "course": "JavaScript",
-      "grade": 100
-    },
-    {
-      "id": 32,
-      "name": "Douglas Crockford",
-      "course": "JavaScript",
-      "grade": 100
-    },
-    {
       "name": "Helen Choi",
       "course": "Web Dev",
       "grade": "90",
-      "id": 33
+      "id": 1
     },
     {
       "name": "Jae Choi",
       "course": "Design",
       "grade": "100",
-      "id": 34
+      "id": 2
     },
     {
       "name": "Logan Choi",
       "course": "Sleeping",
-      "grade": "20",
-      "id": 35
+      "grade": "50",
+      "id": 3
     }
   ]
 }
