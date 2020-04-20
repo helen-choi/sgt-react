@@ -47,9 +47,12 @@ export default class GradeForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} onReset={this.handleReset}>
-        <input className="form-control" type="name" id="name" name="name" value={this.state.name} onChange={this.handleChange} placeholder="Name" />
-        <input className="form-control" type="course" id="course" name="course" value={this.state.course} onChange={this.handleChange} placeholder="Course" />
-        <input className="form-control" type="grade" id="grade" name="grade" value={this.state.grade} onChange={this.handleChange} placeholder="Grade" />
+        <i className="input-icon far fa-user"></i>
+        <input className="input form-control" type="name" id="name" name="name" value={this.state.name} onChange={this.handleChange} placeholder="Name" />
+        <i className="input-icon far fa-list-alt"></i>
+        <input className="input form-control" type="course" id="course" name="course" value={this.state.course} onChange={this.handleChange} placeholder="Course" />
+        <i className="input-icon fas fa-pencil-alt"></i>
+        <input className="input form-control" type="grade" id="grade" name="grade" value={this.state.grade} onChange={this.handleChange} placeholder="Grade" />
         <button type="submit">Add</button>
         <button type="reset">Cancel</button>
       </form>
