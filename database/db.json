@@ -21,20 +21,14 @@
     {
       "name": "Helen Choi",
       "course": "Web Dev",
-      "grade": "90",
+      "grade": "100",
       "id": 33
     },
     {
       "name": "Jae Choi",
       "course": "Design",
-      "grade": "100",
+      "grade": "30",
       "id": 34
-    },
-    {
-      "name": "Logan Choi",
-      "course": "Sleeping",
-      "grade": "20",
-      "id": 35
     }
   ]
 }
