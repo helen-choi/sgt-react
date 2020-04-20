@@ -29,7 +29,7 @@ class App extends React.Component {
   getAverageGrade(grades) {
     let sum = 0;
     for (let i = 0; i < grades.length; i++) {
-      sum += grades[i].grade;
+      sum += parseInt(grades[i].grade);
     }
     const average = sum / grades.length;
     return Math.ceil(average);
