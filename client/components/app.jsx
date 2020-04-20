@@ -67,6 +67,7 @@ class App extends React.Component {
     const grades = this.state.grades;
     return (
       <div className="container">
+
         <div className="row d-flex">
 
           <Header text="Student Grade Table" average={this.getAverageGrade(grades)} />
@@ -77,6 +78,7 @@ class App extends React.Component {
           <div className="list col-md-8 order-md-1">
             <GradeTable grades={this.state.grades} deleteGrade={this.deleteGrade} />
           </div>
+
         </div>
       </div>
     );
